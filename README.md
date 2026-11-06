@@ -17,8 +17,8 @@ The project combines a PHP backend with a JavaScript, HTML, and CSS frontend.
 - **Backend:** PHP
 - **Frontend:** HTML, CSS, JavaScript, jQuery
 - **Database:** MySQL
-- **Dependencies:** Composer
-- **Libraries:** Flight, Firebase JWT, Swagger PHP
+- **Dependency Management:** Composer
+- **Libraries and Frameworks:** Flight, Firebase JWT, Swagger PHP
 
 ## Project Setup
 
@@ -32,8 +32,8 @@ The project combines a PHP backend with a JavaScript, HTML, and CSS frontend.
 ### 1. Clone the repository
 
 ```bash
-git clone <repository-url>
-cd TechPersona
+git clone https://github.com/zehragrbovic/personality-test.git
+cd personality-test
 ```
 
 ### 2. Install PHP dependencies
@@ -42,22 +42,36 @@ cd TechPersona
 composer install
 ```
 
-### 3. Create the database
+### 3. Create and populate the database
 
-Create a MySQL database named `personalitytest`, then import the provided SQL file:
+Create a MySQL database named `personalitytest`:
+
+```sql
+CREATE DATABASE personalitytest;
+```
+
+Import the provided SQL file:
 
 ```bash
 mysql -u root -p personalitytest < database/techpersona.sql
 ```
 
-The SQL file creates all six required tables and populates the questions, answers, and IT role types. User accounts and test history are created locally as users interact with the application.
+The SQL file creates all six required tables and populates the questions, answers, and IT role types. User accounts and test history are generated as users interact with the application.
 
 ### 4. Configure the application
 
-Copy the example configuration:
+Copy the example configuration file:
+
+**Windows (PowerShell):**
+
+```powershell
+Copy-Item rest\Config.example.class.php rest\Config.class.php
+```
+
+**macOS / Linux:**
 
 ```bash
-copy rest\Config.example.class.php rest\Config.class.php
+cp rest/Config.example.class.php rest/Config.class.php
 ```
 
 Open `rest/Config.class.php` and update the database settings to match your local MySQL configuration.
@@ -73,10 +87,9 @@ Place the project in your web server's document root and start Apache and MySQL.
 For a standard XAMPP installation, open:
 
 ```text
-http://localhost/TechPersona/
+http://localhost/personality-test/
 ```
 
 ## Live Demo
 
 [Tech Persona](https://orca-app-nrvnt.ondigitalocean.app/)
-
