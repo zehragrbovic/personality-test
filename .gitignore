@@ -1,0 +1,20 @@
+﻿# Composer dependencies
+/vendor/
+
+# Environment and configuration secrets
+.env
+.env.*
+!.env.example
+/rest/Config.class.php
+
+# Logs
+*.log
+
+# IDE and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Unrelated coursework files
+/final2-midterm3/
